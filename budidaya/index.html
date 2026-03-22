@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budidaya Tanaman - DuniaTani.id</title>
+    <meta name="description" content="Panduan budidaya tanaman padi, sayuran, buah, dan tanaman hias">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #2E7D32, #81C784); padding: 1rem 5%; color: white; }
+        .logo h1 { font-size: 2rem; }
+        nav { background: #1B5E20; padding: 0.8rem 5%; }
+        .nav-menu { display: flex; list-style: none; gap: 2rem; }
+        .nav-menu a { color: white; text-decoration: none; font-weight: 500; }
+        .nav-menu a:hover { color: #FFB300; }
+        .breadcrumb { padding: 1rem 5%; background: #f5f5f5; }
+        .breadcrumb a { color: #2E7D32; text-decoration: none; }
+        .page-header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%234CAF50" width="1200" height="400"/></svg>'); background-size: cover; height: 300px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .container { padding: 3rem 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2rem; color: #1B5E20; margin-bottom: 2rem; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card-img { height: 200px; background: linear-gradient(135deg, #81C784, #4CAF50); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+        .card-content { padding: 1.5rem; }
+        .card-content h3 { color: #2E7D32; margin-bottom: 1rem; }
+        .card-content p { color: #666; line-height: 1.6; margin-bottom: 1rem; }
+        .btn { display: inline-block; padding: 0.8rem 2rem; background: #FFB300; color: white; text-decoration: none; border-radius: 25px; font-weight: bold; }
+        .footer { background: #1a1a1a; color: white; padding: 2rem 5%; text-align: center; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>DuniaTani.id</h1>
+            <span>Pusat Informasi Pertanian Modern Indonesia</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/budidaya/">Budidaya</a></li>
+            <li><a href="/hama-penyakit/">Hama & Penyakit</a></li>
+            <li><a href="/pupuk-tanah/">Pupuk & Tanah</a></li>
+            <li><a href="/teknologi/">Teknologi</a></li>
+            <li><a href="/tentang/">Tentang</a></li>
+        </ul>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Beranda</a> > <strong>Budidaya</strong>
+    </div>
+
+    <section class="page-header">
+        <div>
+            <h1>🌾 Budidaya Tanaman</h1>
+            <p>Panduan lengkap budidaya berbagai jenis tanaman</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Pilih Kategori Tanaman</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img">🌾</div>
+                <div class="card-content">
+                    <h3>Padi</h3>
+                    <p>Pelajari teknik budidaya padi modern, varietas unggul Inpari 32, dan cara meningkatkan hasil panen hingga 10-12 ton per hektar.</p>
+                    <a href="padi.html" class="btn">Pelajari Selengkapnya</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">🥬</div>
+                <div class="card-content">
+                    <h3>Sayuran</h3>
+                    <p>Panduan budidaya sayuran organik, cabai, tomat, sawi, dan sayuran daun lainnya untuk hasil optimal.</p>
+                    <a href="sayuran.html" class="btn">Pelajari Selengkapnya</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">🍊</div>
+                <div class="card-content">
+                    <h3>Buah-buahan</h3>
+                    <p>Teknik menanam buah tropis seperti mangga, jeruk, pisang, dan durian untuk hasil berkualitas.</p>
+                    <a href="buah.html" class="btn">Pelajari Selengkapnya</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">🌺</div>
+                <div class="card-content">
+                    <h3>Tanaman Hias</h3>
+                    <p>Cara merawat tanaman hias indoor dan outdoor, anggrek, mawar, dan tanaman hias daun.</p>
+                    <a href="tanaman-hias.html" class="btn">Pelajari Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 DuniaTani.id - Belajar, Bertani, dan Panen Sukses</p>
+    </footer>
+</body>
+</html>
