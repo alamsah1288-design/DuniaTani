@@ -4,72 +4,477 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DuniaTani.id - Pusat Informasi Pertanian Modern Indonesia</title>
-    <meta name="description" content="Portal informasi pertanian modern Indonesia">
+    <meta name="description" content="DuniaTani.id adalah portal informasi pertanian modern Indonesia. Pelajari budidaya tanaman, teknologi pertanian, agribisnis, dan dapatkan panduan lengkap untuk petani.">
+    <meta name="keywords" content="pertanian indonesia, budidaya tanaman, teknologi pertanian, agribisnis, pupuk organik, hidroponik, smart farming">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #f5f5f5; }
-        .header { background: linear-gradient(135deg, #2E7D32, #81C784); padding: 1rem 5%; color: white; }
-        .logo h1 { font-size: 2rem; }
-        nav { background: #1B5E20; padding: 0.8rem 5%; }
-        .nav-menu { display: flex; list-style: none; gap: 2rem; }
-        .nav-menu a { color: white; text-decoration: none; font-weight: 500; }
-        .nav-menu a:hover { color: #FFB300; }
-        .hero { padding: 3rem 5%; background: white; text-align: center; }
-        .container { padding: 2rem 5%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .category-card { background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
-        .category-card:hover { transform: translateY(-5px); }
-        .category-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .btn { display: inline-block; padding: 0.8rem 2rem; background: #FFB300; color: white; text-decoration: none; border-radius: 25px; margin-top: 1rem; }
-        .footer { background: #1a1a1a; color: white; padding: 2rem 5%; text-align: center; margin-top: 3rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #2E7D32 0%, #81C784 100%);
+            padding: 1rem 5%;
+            color: white;
+        }
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            display: block;
+            font-style: italic;
+        }
+        nav {
+            background-color: #1B5E20;
+            padding: 0.8rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-menu li {
+            position: relative;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            display: block;
+        }
+        .nav-menu a:hover {
+            color: #FFB300;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            z-index: 10;
+        }
+        .dropdown-content a {
+            color: #333;
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .hero {
+            padding: 2rem 5%;
+            background: white;
+        }
+        .slider {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1536617621572-1d5f1e6269a0?w=1200');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            padding: 3rem;
+            color: white;
+        }
+        .slider-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            padding: 0.8rem 2rem;
+            background-color: #FFB300;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .container {
+            padding: 2rem 5%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            color: #1B5E20;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #FFB300;
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        .article-img {
+            height: 200px;
+            background: linear-gradient(135deg, #81C784, #4CAF50);
+            position: relative;
+        }
+        .article-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: #FFB300;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .article-content {
+            padding: 1.5rem;
+        }
+        .article-content h3 {
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+        .article-content h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .read-more {
+            color: #2E7D32;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.8rem;
+        }
+        .sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .widget {
+            margin-bottom: 2rem;
+        }
+        .widget-title {
+            font-size: 1.3rem;
+            color: #1B5E20;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #FFB300;
+        }
+        .features {
+            padding: 3rem 5%;
+            background: white;
+            margin-top: 2rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .feature-item:hover {
+            background: #2E7D32;
+            color: white;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 5% 1rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            color: #FFB300;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        .footer-col a:hover {
+            color: #FFB300;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #ccc;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">
-            <h1>DuniaTani.id</h1>
-            <span>Pusat Informasi Pertanian Modern Indonesia</span>
+        <div class="top-header">
+            <div class="logo">
+                <h1>DuniaTani.id</h1>
+                <span>Pusat Informasi Pertanian Modern Indonesia</span>
+            </div>
         </div>
     </header>
 
     <nav>
         <ul class="nav-menu">
             <li><a href="/">Beranda</a></li>
-            <li><a href="/budidaya/">Budidaya</a></li>
-            <li><a href="/hama-penyakit/">Hama & Penyakit</a></li>
-            <li><a href="/pupuk-tanah/">Pupuk & Tanah</a></li>
-            <li><a href="/teknologi/">Teknologi</a></li>
-            <li><a href="/tentang/">Tentang</a></li>
+            <li class="dropdown">
+                <a href="/budidaya/">Budidaya ▼</a>
+                <div class="dropdown-content">
+                    <a href="/budidaya/padi.html">Padi</a>
+                    <a href="/budidaya/sayuran.html">Sayuran</a>
+                    <a href="/budidaya/buah.html">Buah-buahan</a>
+                    <a href="/budidaya/tanaman-hias.html">Tanaman Hias</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="/hama-penyakit/">Hama & Penyakit ▼</a>
+                <div class="dropdown-content">
+                    <a href="/hama-penyakit/hama.html">Hama Tanaman</a>
+                    <a href="/hama-penyakit/penyakit.html">Penyakit Tanaman</a>
+                    <a href="/hama-penyakit/pestisida-alami.html">Pestisida Alami</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="/pupuk-tanah/">Pupuk & Tanah ▼</a>
+                <div class="dropdown-content">
+                    <a href="/pupuk-tanah/organik.html">Pupuk Organik</a>
+                    <a href="/pupuk-tanah/kompos.html">Cara Membuat Kompos</a>
+                    <a href="/pupuk-tanah/kesuburan.html">Kesuburan Tanah</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="/teknologi/">Teknologi ▼</a>
+                <div class="dropdown-content">
+                    <a href="/teknologi/smart-farming.html">Smart Farming</a>
+                    <a href="/teknologi/hidroponik.html">Hidroponik</a>
+                    <a href="/teknologi/drone.html">Drone Pertanian</a>
+                </div>
+            </li>
+            <li><a href="/agribisnis/">Agribisnis</a></li>
+            <li><a href="/artikel/">Artikel</a></li>
+            <li><a href="/komunitas/">Komunitas</a></li>
+            <li class="dropdown">
+                <a href="/tentang/">Tentang ▼</a>
+                <div class="dropdown-content">
+                    <a href="/tentang/">Tentang Kami</a>
+                    <a href="/tentang/privasi.html">Kebijakan Privasi</a>
+                    <a href="/tentang/syarat.html">Syarat & Ketentuan</a>
+                    <a href="/tentang/cookie.html">Kebijakan Cookie</a>
+                </div>
+            </li>
         </ul>
     </nav>
 
     <section class="hero">
-        <h2>Selamat Datang di DuniaTani.id</h2>
-        <p>Pusat informasi pertanian terlengkap untuk petani Indonesia</p>
+        <div class="slider">
+            <div class="slider-content">
+                <h2>Revolusi Pertanian Digital</h2>
+                <p>Pelajari teknologi smart farming terbaru untuk meningkatkan produktivitas pertanian Anda</p>
+                <a href="/teknologi/smart-farming.html" class="btn">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
     </section>
 
     <div class="container">
-        <div class="category-card">
-            <div class="category-icon">🌾</div>
-            <h3>Budidaya Tanaman</h3>
-            <p>Panduan lengkap budidaya padi, sayuran, buah, dan tanaman hias</p>
-            <a href="/budidaya/" class="btn">Pelajari</a>
-        </div>
-        <div class="category-card">
-            <div class="category-icon">🐛</div>
-            <h3>Hama & Penyakit</h3>
-            <p>Cara mengatasi hama dan penyakit tanaman</p>
-            <a href="/hama-penyakit/" class="btn">Pelajari</a>
-        </div>
-        <div class="category-card">
-            <div class="category-icon">🌱</div>
-            <h3>Pupuk & Tanah</h3>
-            <p>Tips pemupukan dan menjaga kesuburan tanah</p>
-            <a href="/pupuk-tanah/" class="btn">Pelajari</a>
-        </div>
+        <main>
+            <h2 class="section-title">Artikel Terkini</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-img">
+                        <span class="article-category">Budidaya</span>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="/budidaya/padi.html">5 Teknik Menanam Padi Organik yang Wajib Dicoba</a></h3>
+                        <p>Pelajari metode modern menanam padi organik dengan hasil panen melimpah...</p>
+                        <a href="/budidaya/padi.html" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-img">
+                        <span class="article-category">Teknologi</span>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="/teknologi/drone.html">Mengenal Drone Pertanian untuk Pemantauan Lahan</a></h3>
+                        <p>Bagaimana drone membantu petani memantau kesehatan tanaman dari udara...</p>
+                        <a href="/teknologi/drone.html" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-img">
+                        <span class="article-category">Pupuk</span>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="/pupuk-tanah/kompos.html">Cara Membuat Pupuk Kompos dari Limbah Rumah Tangga</a></h3>
+                        <p>Langkah-langkah mudah membuat kompos berkualitas di rumah...</p>
+                        <a href="/pupuk-tanah/kompos.html" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-img">
+                        <span class="article-category">Agribisnis</span>
+                    </div>
+                    <div class="article-content">
+                        <h3><a href="/agribisnis/">Strategi Pemasaran Hasil Panen di Era Digital</a></h3>
+                        <p>Tips menjual hasil pertanian secara online dengan harga terbaik...</p>
+                        <a href="/agribisnis/" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">Artikel Populer</h3>
+                <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
+                    <h4><a href="/teknologi/hidroponik.html" style="color: #333; text-decoration: none;">Panduan Lengkap Hidroponik untuk Pemula</a></h4>
+                    <span style="font-size: 0.8rem; color: #666;">3.2rb dibaca</span>
+                </div>
+                <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
+                    <h4><a href="/hama-penyakit/hama.html" style="color: #333; text-decoration: none;">Mengatasi Hama Wereng pada Tanaman Padi</a></h4>
+                    <span style="font-size: 0.8rem; color: #666;">2.8rb dibaca</span>
+                </div>
+            </div>
+            <div class="widget">
+                <h3 class="widget-title">Komunitas</h3>
+                <div style="background: #f5f5f5; padding: 1rem; border-radius: 8px;">
+                    <p style="margin-bottom: 0.5rem;">💬 247 member online</p>
+                    <a href="/komunitas/" class="btn" style="display: block; text-align: center; margin-top: 0.5rem;">Gabung Diskusi</a>
+                </div>
+            </div>
+        </aside>
     </div>
 
+    <section class="features">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Fitur Interaktif</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">📊</div>
+                <h3>Kalkulator Usaha Tani</h3>
+                <p>Analisis modal dan keuntungan</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📅</div>
+                <h3>Kalender Tanam</h3>
+                <p>Jadwal tanam sesuai wilayah</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💬</div>
+                <h3>Forum Petani</h3>
+                <p>Diskusi dan tanya jawab</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📱</div>
+                <h3>Download Panduan</h3>
+                <p>E-book dan modul pertanian</p>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
-        <p>&copy; 2024 DuniaTani.id - Belajar, Bertani, dan Panen Sukses</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="/tentang/">Profil</a></li>
+                    <li><a href="/tentang/">Tim Redaksi</a></li>
+                    <li><a href="/kontak/">Kontak</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="/iklan/">Iklan</a></li>
+                    <li><a href="/kerjasama/">Kerjasama</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Bantuan</h4>
+                <ul>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="/hubungi-kami/">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ikuti Kami</h4>
+                <ul>
+                    <li><a href="https://facebook.com/duniatani.id">Facebook</a></li>
+                    <li><a href="https://instagram.com/duniatani.id">Instagram</a></li>
+                    <li><a href="https://youtube.com/duniatani">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 DuniaTani.id - Pusat Informasi Pertanian Modern Indonesia</p>
+            <p style="margin-top: 0.5rem;">"Belajar, Bertani, dan Panen Sukses"</p>
+        </div>
     </footer>
 </body>
 </html>
