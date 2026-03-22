@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budidaya Padi - Panduan Lengkap | DuniaTani.id</title>
+    <meta name="description" content="Panduan lengkap budidaya padi, varietas unggul Inpari 32, teknik menanam, dan tips meningkatkan hasil panen">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2E7D32 0%, #81C784 100%);
+            padding: 1rem 5%;
+            color: white;
+        }
+        
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            font-size: 0.9rem;
+            display: block;
+            font-style: italic;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #1B5E20;
+            padding: 0.8rem 5%;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            color: #FFB300;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 5%;
+            background: #f5f5f5;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: #2E7D32;
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1536617621572-1d5f1e6269a0?w=1200');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .page-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Main Content */
+        .container {
+            padding: 3rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #1B5E20;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #FFB300;
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        
+        /* Rice Varieties Grid */
+        .varieties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .variety-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .variety-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .variety-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #81C784, #4CAF50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .variety-content {
+            padding: 1.5rem;
+        }
+        
+        .variety-content h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .variety-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .variety-specs {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #1B5E20;
+        }
+        
+        .spec-value {
+            color: #666;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .comparison-table th {
+            background: #2E7D32;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        /* Cultivation Steps */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .step-card {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 6rem;
+            opacity: 0.1;
+            font-weight: bold;
+        }
+        
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .step-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* Video Section */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Tips Box */
+        .tips-box {
+            background: linear-gradient(135deg, #FFF9C4, #FFEB3B);
+            border-left: 5px solid #FFB300;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .tips-box h3 {
+            color: #1B5E20;
+            margin-bottom: 1rem;
+        }
+        
+        .tips-box ul {
+            margin-left: 1.5rem;
+            color: #333;
+        }
+        
+        .tips-box li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        /* Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            background: linear-gradient(135deg, #81C784, #4CAF50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        /* CTA Button */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #FFB300;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 1rem 0;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #FFA000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h1>DuniaTani.id</h1>
+            <span>Pusat Informasi Pertanian Modern Indonesia</span>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/budidaya">Budidaya</a></li>
+            <li><a href="/hama-penyakit">Hama & Penyakit</a></li>
+            <li><a href="/pupuk-tanah">Pupuk & Tanah</a></li>
+            <li><a href="/teknologi">Teknologi</a></li>
+            <li><a href="/agribisnis">Agribisnis</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="/">Beranda</a> > <a href="/budidaya">Budidaya</a> > <strong>Padi</strong>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div>
+            <h1>🌾 Budidaya Padi</h1>
+            <p>Panduan Lengkap Menanam Padi Varietas Unggul untuk Hasil Panen Maksimal</p>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction -->
+        <p class="intro-text">
+            Padi merupakan komoditas pangan utama di Indonesia. Dengan teknologi pertanian modern dan pemilihan 
+            varietas unggul seperti <strong>Inpari 32</strong>, petani dapat meningkatkan produktivitas hingga 
+            10-12 ton per hektar. Pelajari teknik budidaya, perbandingan varietas, dan tips sukses bertani padi.
+        </p>
+        
+        <!-- Rice Varieties -->
+        <h2 class="section-title">Varietas Padi Unggulan</h2>
+        <div class="varieties-grid">
+            <!-- Inpari 32 Promeo -->
+            <div class="variety-card">
+                <div class="variety-image">🌾</div>
+                <div class="variety-content">
+                    <h3>Inpari 32 Promeo</h3>
+                    <p>Varietas padi hibrida dengan ketahanan fisik ekstrem, sangat tahan rebah dan pata leher. 
+                    Cocok untuk lahan yang sering terkena angin kencang.</p>
+                    
+                    <div class="variety-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Potensi Hasil</span>
+                            <span class="spec-value">10-12 ton/ha</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Tinggi Tanaman</span>
+                            <span class="spec-value">100-110 cm</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Ketahanan</span>
+                            <span class="spec-value">Anti rebah, Blast, Tungro</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Produsen</span>
+                            <span class="spec-value">CV Viona Benih Mandiri</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn">Pelajari Lebih Lanjut</a>
+                </div>
+            </div>
+            
+            <!-- Inpari 32 Maxi Pro -->
+            <div class="variety-card">
+                <div class="variety-image">🌾</div>
+                <div class="variety-content">
+                    <h3>Inpari 32 Maxi Pro</h3>
+                    <p>Varietas dengan keseimbangan hasil tinggi dan kualitas beras premium. 
+                    Sangat tahan wereng coklat dan menghasilkan beras putih, bersih, dan pulen.</p>
+                    
+                    <div class="variety-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Potensi Hasil</span>
+                            <span class="spec-value">8.5-9.8 ton/ha</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Tinggi Tanaman</span>
+                            <span class="spec-value">97-100 cm</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Ketahanan</span>
+                            <span class="spec-value">Wereng biotipe 1-3, Blast</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Kualitas Beras</span>
+                            <span class="spec-value">Premium, Super Pulen</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn">Pelajari Lebih Lanjut</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comparison Table -->
+        <div class="comparison-section">
+            <h2 class="section-title">Perbandingan Detail Inpari 32 Promeo vs Maxi Pro</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Inpari 32 Promeo</th>
+                        <th>Inpari 32 Maxi Pro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Indukan</strong></td>
+                        <td>Inpari 32 HDP (Balitbangtan)</td>
+                        <td>Inpari 32 HDP (Balitbangtan)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Potensi Hasil</strong></td>
+                        <td>10-12 ton/ha (optimal)</td>
+                        <td>8.5-9.8 ton/ha</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tinggi Tanaman</strong></td>
+                        <td>100-110 cm (lebih kekar)</td>
+                        <td>97-100 cm (lebih pendek)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ketahanan Utama</strong></td>
+                        <td>Anti rebah, batang kokoh, pata leher</td>
+                        <td>Wereng coklat biotipe 1-3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kualitas Gabah</strong></td>
+                        <td>Panjang ramping</td>
+                        <td>Kuning, bersih, bening</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kualitas Beras</strong></td>
+                        <td>Baik</td>
+                        <td>Premium, super pulen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cocok Untuk</strong></td>
+                        <td>Lahan berangin, rawan rebah</td>
+                        <td>Daerah endemik wereng</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Video Tutorial -->
+        <h2 class="section-title">Video Tutorial: Perbandingan Inpari 32 Promeo & Maxi Pro</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/md4B3zWtV84" 
+                    title="Perbandingan Inpari 32 Promeo dan Maxi Pro" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        
+        <!-- Cultivation Steps -->
+        <h2 class="section-title">Langkah-Langkah Budidaya Padi</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-icon">🌱</div>
+                <h3>Persiapan Benih</h3>
+                <p>Pilih benih unggul bersertifikat. Rendam benih 24 jam dan inkubasi 2 hari hingga berkecambah</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-icon">🚜</div>
+                <h3>Pengolahan Lahan</h3>
+                <p>Bajak tanah hingga gembur, ratakan, dan buat pematang. Tambahkan pupuk dasar organik</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-icon">🌾</div>
+                <h3>Penanaman</h3>
+                <p>Tanam dengan sistem jajar legowo 2:1 atau 4:1 dengan jarak 20x20 cm untuk hasil optimal</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-icon">💧</div>
+                <h3>Pemeliharaan</h3>
+                <p>Pengairan teratur, penyiangan, pemupukan susulan, dan pengendalian hama terpadu</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <div class="step-icon">🌾</div>
+                <h3>Panen</h3>
+                <p>Panen saat gabah menguning 90% (umur 105-115 hari). Gunakan mesin perontok untuk efisiensi</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <div class="step-icon">📦</div>
+                <h3>Pasca Panen</h3>
+                <p>Keringkan gabah hingga kadar air 14%. Simpan di tempat kering dan bersih</p>
+            </div>
+        </div>
+        
+        <!-- Tips Box -->
+        <div class="tips-box">
+            <h3>💡 Tips Memilih Varietas Padi</h3>
+            <ul>
+                <li><strong>Pilih Inpari 32 Promeo</strong> jika lahan Anda sering dilanda angin kencang dan rawan rebah, 
+                serta mengejar target tonase tinggi</li>
+                <li><strong>Pilih Inpari 32 Maxi Pro</strong> jika daerah Anda endemik hama wereng batang coklat atau 
+                mengutamakan kualitas beras premium</li>
+                <li>Sesuaikan dengan kesuburan tanah dan kondisi lingkungan wilayah Anda</li>
+                <li>Selalu gunakan benih bersertifikat untuk hasil optimal</li>
+                <li>Perhatikan jadwal tanam yang tepat sesuai musim</li>
+            </ul>
+        </div>
+        
+        <!-- Image Gallery -->
+        <h2 class="section-title">Galeri Budidaya Padi</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                🌱
+                <div class="gallery-caption">Pembibitan Padi</div>
+            </div>
+            <div class="gallery-item">
+                🚜
+                <div class="gallery-caption">Pengolahan Lahan</div>
+            </div>
+            <div class="gallery-item">
+                🌾
+                <div class="gallery-caption">Penanaman Jajar Legowo</div>
+            </div>
+            <div class="gallery-item">
+                💧
+                <div class="gallery-caption">Pemeliharaan & Pengairan</div>
+            </div>
+            <div class="gallery-item">
+                🌾
+                <div class="gallery-caption">Padi Mulai Berbulir</div>
+            </div>
+            <div class="gallery-item">
+                🌾
+                <div class="gallery-caption">Panen Raya</div>
+            </div>
+        </div>
+        
+        <!-- Additional Resources -->
+        <h2 class="section-title">Sumber Daya Lainnya</h2>
+        <div class="varieties-grid">
+            <div class="variety-card">
+                <div class="variety-content">
+                    <h3>📊 Kalkulator Usaha Tani Padi</h3>
+                    <p>Hitung estimasi modal, biaya produksi, dan keuntungan budidaya padi Anda</p>
+                    <a href="#" class="btn">Hitung Sekarang</a>
+                </div>
+            </div>
+            
+            <div class="variety-card">
+                <div class="variety-content">
+                    <h3>📅 Kalender Tanam Padi</h3>
+                    <p>Jadwal tanam optimal berdasarkan wilayah dan kondisi cuaca</p>
+                    <a href="#" class="btn">Lihat Kalender</a>
+                </div>
+            </div>
+            
+            <div class="variety-card">
+                <div class="variety-content">
+                    <h3>💬 Forum Diskusi</h3>
+                    <p>Tanya jawab dengan pakar dan petani berpengalaman tentang budidaya padi</p>
+                    <a href="#" class="btn">Gabung Diskusi</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 DuniaTani.id - Pusat Informasi Pertanian Modern Indonesia</p>
+        <p>"Belajar, Bertani, dan Panen Sukses"</p>
+    </footer>
+</body>
+</html>
